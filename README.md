@@ -30,8 +30,8 @@ Saber posicionar elementos, diseño y poder utilizar los elementos de los botone
 
 ## Interfaz
 
-![](img/inicial.PNG)
-![](img/suma.PNG)
+![](img/inicial.png)
+![](img/suma.png)
 
 ## Como iniciar la aplicación
 
@@ -45,5 +45,8 @@ Saber posicionar elementos, diseño y poder utilizar los elementos de los botone
 
 ## Aplicación Utilizada
 Visual Studio Code
+
+## Autor
+José María Pérez Vázquez
 
 
