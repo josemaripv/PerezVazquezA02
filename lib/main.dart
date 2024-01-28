@@ -1,10 +1,43 @@
 import 'package:flutter/material.dart';
+import 'package:perezvazqueza01/widgets/buton.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: Counter());
+  }
+}
+
+class Counter extends StatefulWidget {
+  @override
+  CounterState createState() => CounterState();
+}
+
+class CounterState extends State<Counter> {
+  int counter = 0;
+
+  void subtract() {
+    setState(() {
+      if (counter > 0) counter--;
+    });
+  }
+
+  void resetCounter() {
+    setState(() {
+      counter = 0;
+    });
+  }
+
+  void add() {
+    setState(() {
+      counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +57,7 @@ class MyApp extends StatelessWidget {
               ),
               SizedBox(height: 150),
               Text(
-                '0',
+                "${counter}",
                 style: TextStyle(
                   fontFamily: 'PoppinsThin',
                   color: Colors.white,
@@ -35,55 +68,25 @@ class MyApp extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF1E1E1E),
-                      fixedSize: Size(120, 40),
-                    ),
-                    child: Text(
-                      '-',
-                      style: TextStyle(
-                          fontFamily: 'PoppinsBold',
-                          fontSize: 20,
-                          color: Colors.white),
-                    ),
+                  Expanded(
+                    child: ButonOperation(
+                        text: "-", fontSize: 20, onPressed: subtract),
                   ),
                   SizedBox(width: 5),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF201F1F),
-                      fixedSize: Size(120, 40),
-                    ),
-                    child: Text(
-                      'RESET',
-                      style: TextStyle(
-                          fontFamily: 'PoppinsBold',
-                          fontSize: 20,
-                          color: Colors.white),
-                    ),
+                  Expanded(
+                    child: ButonOperation(
+                        text: "RESET", fontSize: 20, onPressed: resetCounter),
                   ),
                   SizedBox(width: 5),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF1E1D1D),
-                      fixedSize: Size(120, 40),
-                    ),
-                    child: Text(
-                      '+',
-                      style: TextStyle(
-                          fontFamily: 'PoppinsBold',
-                          fontSize: 20,
-                          color: Colors.white),
-                    ),
+                  Expanded(
+                    child:
+                        ButonOperation(text: "+", fontSize: 20, onPressed: add),
                   ),
                 ],
               ),
               SizedBox(height: 50),
               Text(
-                'By JoseMariaPerezVazquez',
+                'Por JoseMariaPerezVazquez',
                 style: TextStyle(
                   color: Colors.white,
                 ),
