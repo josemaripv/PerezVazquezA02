@@ -1,4 +1,4 @@
-# Ejercicio 02 Flutter
+# Ejercicio 03 Flutter
 Deberás de crear una clase en flutter que sea una plantilla de los botones, en la que le pases el argumento de texto y sustituirlo por los 3 botones que tenemos → 2 puntos
 Darle funcionalidad a los botones, cambios solo por consola → 2 puntos
 Cambios por pantalla → 4 puntos.
